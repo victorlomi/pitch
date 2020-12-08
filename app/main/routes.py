@@ -3,6 +3,7 @@ from flask_login import current_user, login_user, logout_user
 from app.main.models import User
 from app.main import bp
 from app.main import forms
+from app import db
 
 @bp.route('/')
 def index():
@@ -38,3 +39,19 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
+
+@bp.route('/signup', methods=["GET", "POST"])
+def signup():
+    # go back to homepage if the user is logged in
+    if current_user.is_authenticated:
+        return redirect(url_for('main.index'))
+    form = forms.SignupForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash("Congratulations, you are now a registered user!")
+        return redirect(url_for('main.login'))
+    return render_template('signup.html', form=form)
+

@@ -29,7 +29,7 @@ def login():
         # redirect to home - TODO - change to posts route
         return redirect(url_for('main.index')) 
 
-    return render_template('login.html', form=form)
+    return render_template('auth/login.html', form=form)
 
 @bp.route('/logout')
 def logout():
@@ -49,5 +49,5 @@ def signup():
         db.session.commit()
         flash("Congratulations, you are now a registered user!")
         return redirect(url_for('auth.login'))
-    return render_template('signup.html', form=form)
+    return render_template('auth/signup.html', form=form)
 

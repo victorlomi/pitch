@@ -1,5 +1,5 @@
 from app import create_app, db
-from app.main.models import User, Pitch
+from app.models import User, Pitch
 
 app = create_app()
 

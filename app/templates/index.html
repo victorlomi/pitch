@@ -8,11 +8,11 @@
     {# navigation - will move to base.html when using bootstrap nav #}
     <nav>
         <ul>
-            <li><a href="{{ url_for('main.signup') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('auth.signup') }}">Sign Up</a></li>
             {% if current_user.is_anonymous %}
-            <li><a href="{{ url_for('main.login') }}">Log In</a></li>
+            <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
             {% else %}
-            <li><a href="{{ url_for('main.logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
             {% endif %}
         </ul>
     </nav>

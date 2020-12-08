@@ -4,7 +4,7 @@ from app.main import forms
 
 @bp.route('/')
 def index():
-    return 'welcome to pitch!'
+    return render_template('index.html') 
 
 @bp.route('/login')
 def login():

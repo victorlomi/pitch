@@ -1,5 +1,5 @@
 from flask import render_template, flash, redirect, url_for
-from flask_login import current_user, login_user
+from flask_login import current_user, login_user, logout_user
 from app.main.models import User
 from app.main import bp
 from app.main import forms
@@ -33,3 +33,8 @@ def login():
         return redirect(url_for('main.index')) 
 
     return render_template('login.html', form=form)
+
+@bp.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('main.index'))

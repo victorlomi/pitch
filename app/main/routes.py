@@ -5,3 +5,6 @@ from app.main import bp
 def index():
     return render_template('index.html') 
 
+@bp.route('/category/<category>')
+def category(category):
+    return render_template('category.html', category=category)

@@ -18,10 +18,11 @@
     </nav>
     
     {# categories #}
+    <h2>Categories</h2>
     <ul>
-        <li><a href="#">Pickup Lines</a></li>
-        <li><a href="#">Interview</a></li>
-        <li><a href="#">Product</a></li>
-        <li><a href="#">Promotion</a></li>
+        <li><a href="{{ url_for('main.category', category='pickup') }}">Pickup Lines</a></li>
+        <li><a href="{{ url_for('main.category', category='interview') }}">Interview</a></li>
+        <li><a href="{{ url_for('main.category', category='product') }}">Product</a></li>
+        <li><a href="{{ url_for('main.category', category='promotion') }}">Promotion</a></li>
     </ul>
 {% endblock %}

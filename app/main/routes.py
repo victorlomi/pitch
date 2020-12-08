@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect
+from flask import render_template, flash, redirect, url_for
 from app.main import bp
 from app.main import forms
 
@@ -16,6 +16,6 @@ def login():
         flash(f"Login requested for user {form.username.data}, remember_me={form.remember_me.data}")
 
         # redirect to home - TODO - change to posts route
-        return redirect('/') 
+        return redirect(url_for('main.index')) 
 
     return render_template('login.html', form=form)

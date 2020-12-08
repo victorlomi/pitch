@@ -8,8 +8,8 @@
     {# navigation - will move to base.html when using bootstrap nav #}
     <nav>
         <ul>
-            <li><a href="/signup">Sign Up</a></li>
-            <li><a href="/login">Log In</a></li>
+            <li><a href="{{ url_for('main.index') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('main.login') }}">Log In</a></li>
         </ul>
     </nav>
 {% endblock %}

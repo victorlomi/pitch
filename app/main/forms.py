@@ -5,6 +5,6 @@ from wtforms import validators
 from app.models import User
 
 class AddForm(FlaskForm):
-    body = TextAreaField('Body', [validators.optional(), validators.length(max=200)])
-    category = SelectField('Category', choices=[('Pickup Lines', 'pickup'), ('Interview', 'interview'), ('Product', 'product'), ('Promotion', 'promotion')])
+    body = TextAreaField('Pitch', [validators.optional(), validators.length(max=200)])
+    category = SelectField('Category', choices=[( 'pickup', 'Pickup Lines'), ('interview', 'Interview'), ('product', 'Product'), ('promotion', 'Promotion')])
     submit = SubmitField('Submit')

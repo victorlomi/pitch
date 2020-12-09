@@ -1,5 +1,5 @@
 # Pitch
-A web app that keeps you updated on the latest pitches from a variety of community contributed pitches. These pitches are divided into categories such as pick up lines and interview pitches. Users can comment and also add they're own pitches.
+A web app that keeps you updated on the latest pitches from a variety of community contributed pitches. These pitches are divided into categories such as pick up lines and interview pitches. Users can comment and also add their own pitches.
 
 **Author: Victor Lominyo**
 

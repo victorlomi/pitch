@@ -13,7 +13,9 @@ def index():
 def category(category):
     # retrieve all pitches in category
     pitches = Pitch().query.filter_by(category=category).all()
-    print(len(pitches))
+
+    if pitches:
+        pitches.reverse()
     return render_template('category.html', category=category, pitches=pitches)
 
 @bp.route('/add-pitch', methods=['GET', 'POST'])

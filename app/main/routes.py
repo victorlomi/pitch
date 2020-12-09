@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, flash
 from flask_login import current_user, login_user, logout_user
 from app.main import bp
 from app import db
-from app.models import User, Pitch
+from app.models import User, Pitch, Comment
 from app.main import forms
 
 @bp.route('/')
@@ -49,5 +49,16 @@ def comments(pitch):
     # go to login in page if user is not logged in
     if current_user.is_anonymous:
         return redirect(url_for('auth.login'))
+
+    comments = Comment.query.filter_by(collection=Pitch.query.get(1)).all()
    
-    return render_template('comments.html', pitch=pitch)
+    return render_template('comments.html', pitch=Pitch.query.get(pitch), comments=comments)
+
+@bp.route('/add-comment/<pitch>')
+def add_comment(pitch):
+    # go to login in page if user is not logged in
+    if current_user.is_anonymous:
+        return redirect(url_for('auth.login'))
+
+    return render_template('add_comment.html')
+    

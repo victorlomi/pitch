@@ -12,7 +12,7 @@
                         </div>
                         <div class="panel-footer">
                             <h3 class="panel-title">Posted by {{ pitch.author.username }} on {{ pitch.timestamp.strftime("%x") }}</h3>
-                            <a href="{{ url_for('main.comments', pitch=pitch) }}" style="color: #2b2bff;" class="panel-title">Comments</a>
+                            <a href="{{ url_for('main.comments', pitch=pitch.id) }}" style="color: #2b2bff;" class="panel-title">Comments</a>
                         </div>
                       </div>
                 {% endfor %}

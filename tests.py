@@ -35,6 +35,24 @@ class UserModelCase(unittest.TestCase):
         db.session.commit()
         self.assertEqual(Pitch.query.filter_by(author=u1).first().body, p.body)
 
+class CommentModelCase(unittest.TestCase):
+    def setUp(self):
+        self.app = create_app(TestConfig)
+        self.app_context = self.app.app_context()
+        self.app_context.push()
+        db.create_all()
+
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+        self.app_context.pop()
+
+    def test_comments(self):
+        c = Comment(body="comment")
+        db.session.add(c)
+        db.session.commit()
+        self.assertEqual(Comment.query.filter_by(body=c.body).first().body, c.body)
+
 class PitchModelCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app(TestConfig)

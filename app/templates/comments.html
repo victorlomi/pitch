@@ -2,7 +2,7 @@
 
 {% block content%}
     <div class="container">
-        <h1>{{ category.title() }} Pitches</h1>
+        <h1>Comments</h1>
         <div class="row">
             <div class="col-md-8">
                 {% for pitch in pitches %}
@@ -12,7 +12,7 @@
                         </div>
                         <div class="panel-footer">
                             <h3 class="panel-title">Posted by {{ pitch.author.username }} on {{ pitch.timestamp.strftime("%x") }}</h3>
-                            <a href="{{ url_for('main.comments', pitch=pitch) }}" style="color: #2b2bff;" class="panel-title">Comments</a>
+                            <a href="{{ url_for('main.index') }}" style="color: #2b2bff;" class="panel-title">Comments</a>
                         </div>
                       </div>
                 {% endfor %}

@@ -28,7 +28,7 @@ class Pitch(db.Model):
     category = db.Column(db.String(64))
 
     def __repr__(self):
-        return f'<Pitch {self.body}>'
+        return f'<Pitch {self.id}>'
 
 @login.user_loader
 def load_user(id):

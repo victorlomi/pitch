@@ -5,8 +5,14 @@
         <h1>{{ category.title() }} Pitches</h1>
         <div class="row">
             <div class="col-md-4">
+                {% for pitch in pitches %}
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            {{ pitch.body }}
+                        </div>
+                      </div>
+                {% endfor %}
             </div>
         </div>
-        <p>New User? <a href="{{ url_for('auth.signup') }}">Click to Sign Up!</a> </p>
     </div>
 {% endblock %}

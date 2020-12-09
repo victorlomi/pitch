@@ -33,3 +33,13 @@ def add_pitch():
         return redirect(url_for('main.index')) 
     
     return render_template('add_pitch.html', form=form)
+
+@bp.route('/user/<user>')
+def user(user):
+    # go to login in page if user is not logged in
+    if current_user.is_anonymous:
+        return redirect(url_for('auth.login'))
+
+    user = User.query.filter_by(username=user).first()
+    pitches = Pitch.query.filter_by(author=user).all()
+    return render_template('user.html', user=user, pitches=pitches)

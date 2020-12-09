@@ -1,11 +1,5 @@
 {% extends "base.html" %}
 
-{% block styles %}
-    {{super()}}
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" media="screen" />
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-{% endblock %}
-
 {% block content %}
     <div class="container">
         <div class="row">
@@ -32,8 +26,8 @@
                 {# categories #}
                 <div class="categories-title">
                     <h2>Categories</h2>
-                    <div class="add-button">
-                        <a href="{{ url_for('main.add_pitch') }}">Add Pitch</a>
+                    <div>
+                        <a class="add-button" href="{{ url_for('main.add_pitch') }}">Add Pitch</a>
                     </div>
                 </div>
                 <ul>

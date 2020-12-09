@@ -44,46 +44,9 @@
     color: #333333;
 }
 
-/* Form */
-.general-label {
-    font-size: 18px;
-    color: #333333;
-}
-
-.section-title {
-    font-size: 32px; /* todo: make more responsive with clamp */
-    color: #333333;
-}
-
-#order-btn {
-    font-size: 18px;
-    background-color: #000;
-}
-
-#checkout-btn {
-    font-size: 18px;
-    background-color: #000;
-}
-
-#order-count {
-    background-color: #000;
-}
-
-.total {
-    color: #fff;
-    background-color: #000;
-}
-
-.hide-no-order {
-    display: none;
-}
-
-.card-title {
-    font-size: 20px;
-    color: #333333;
-}
-
-.card-subtitle {
-    font-weight: normal;
-    margin-bottom: 10px;
+/* categories */
+.categories-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

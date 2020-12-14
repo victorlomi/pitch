@@ -12,7 +12,7 @@ Technologies Used
 - Flask
 
 
-Setup Intructions and Installation
+Setup Instructions and Installation
 =
 1. Clone the repository on to your computer
 
